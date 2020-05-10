@@ -13,7 +13,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" sm="12">
-                    <v-card elevation="0" color="#202040" width="100%" :height="$vuetify.breakpoint.smAndDown ? 400:'100%'">
+                    <v-card elevation="0" color="#202040" width="100%" :height="$vuetify.breakpoint.smAndDown ? null:'100%'">
                         <v-row justify="start" align="top" :class="$vuetify.breakpoint.smAndDown ? 'px-12':''">
                             <div>
                                 <div 

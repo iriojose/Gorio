@@ -3,6 +3,7 @@
 
         <v-app-bar-nav-icon 
             color="#fff"
+            @click="change"
             v-if="$vuetify.breakpoint.smAndDown"
         />
 
@@ -13,19 +14,19 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
 
-        <a @click="$vuetify.goTo(0)" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
+        <a @click="$vuetify.goTo('#home')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
             H<span :class="home ? 'font-weight-black hove':'white--text font-weight-black'">OME</span>
         </a>
-        <a @click="$vuetify.goTo(790)" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
+        <a @click="$vuetify.goTo('#about')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
             A<span :class="about ? 'font-weight-black hove':'white--text font-weight-black'">BOUT</span>
         </a>
-        <a @click="$vuetify.goTo(1620)" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
+        <a @click="$vuetify.goTo('#services')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
             S<span :class="services ? 'font-weight-black hove':'white--text font-weight-black'">ERVICES</span>
         </a>
-        <a @click="$vuetify.goTo(2470)" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
+        <a @click="$vuetify.goTo('#portfolio')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
             P<span :class="portfolio ? 'font-weight-black hove':'white--text font-weight-black'">ORTFOLIO</span>
         </a>
-        <a @click="$vuetify.goTo(3220)" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
+        <a @click="$vuetify.goTo('#contact')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
             C<span :class="contact ? 'font-weight-black hove':'white--text font-weight-black'">ONTACT</span>
         </a>
     </v-app-bar>
@@ -33,6 +34,7 @@
 
 <script>
 import * as easings from 'vuetify/es5/services/goto/easing-patterns'
+import {mapActions} from 'vuex';
 
     export default {
         props:{
@@ -64,6 +66,13 @@ import * as easings from 'vuetify/es5/services/goto/easing-patterns'
                 easing: 'easeInOutCubic',
             }
         },
+        methods:{
+            ...mapActions(['setDrawer']),
+
+            change(){
+                this.setDrawer(true);
+            }
+        }
     }
 </script>
 

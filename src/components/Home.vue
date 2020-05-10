@@ -12,7 +12,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" sm="12">
-                    <v-card elevation="0" color="#202040" width="100%" class="px-10">
+                    <v-card elevation="0" color="#202040" width="100%" :height="$vuetify.breakpoint.smAndDown ? null:700" class="px-10">
                         <v-row justify="center" align="center" class="fill-height">
                             <div>
                                 <div class="headline white--text font-weight-black my-5">WELCOME!</div>

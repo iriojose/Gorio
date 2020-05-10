@@ -1,22 +1,24 @@
 <template>
 	<v-app style="background:#202040;">
         <Navbar 
+            id="top"
             :home="isHome" 
             :about="isAbout" 
             :services="isServices" 
             :portfolio="isPortfolio" 
             :contact="isContact"
         />
+        <BarraLateral />
 
-        <Home v-intersect="onIntersect" class="mb-12" />
+        <Home id="home" v-intersect="onIntersect" class="mb-12" />
 
-        <About v-intersect="onAbout" class="mb-12" />
+        <About id="about" v-intersect="onAbout" class="mb-12" />
 
-        <Services v-intersect="onServices" class="mb-12" />
+        <Services id="services" v-intersect="onServices" class="mb-12" />
 
-        <Portfolio v-intersect="onPortfolio" class="mb-12"/>
+        <Portfolio id="portfolio" v-intersect="onPortfolio" class="mb-12"/>
 
-        <Contact v-intersect="onContact" class="mb-12"/>
+        <Contact id="contact" v-intersect="onContact" class="mb-12"/>
         
         <v-divider dark></v-divider>
 
@@ -24,7 +26,7 @@
         <v-hover v-slot:default="{hover}">
             <v-btn 
                 v-show="isAbout || isServices || isPortfolio || isContact"
-                @click="$vuetify.goTo(0)" 
+                @click="$vuetify.goTo('#top')" 
                 fab dark bottom 
                 right color="rgba(255,255,255,0.2)"
                 class="v-btn--example btn" 
@@ -43,6 +45,7 @@ import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import BarraLateral from '@/components/BarraLateral';
 
 	export default {
         components:{
@@ -52,7 +55,8 @@ import Footer from '@/components/Footer';
             About,
             Services,
             Portfolio,
-            Contact
+            Contact,
+            BarraLateral
         },
         data() {
             return {
