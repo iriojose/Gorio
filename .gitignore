@@ -1,0 +1,31 @@
+.DS_Store
+node_modules
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+#git init (inicializa git)
+#git status (se ve cuales archivos se han cambiado)
+#git add . (se agrega los cambios)
+#git commit -m "mensaje" (se crea un commit sobre la rama)
+#git push -u origin master (se usa asi cuando logeas un nuevo remote)
+#git remote add origin url-repo (se agrega la ruta del repositorio para hacer los push)
+
+#git add dist -f && git commit -m "solo dist"
+#git subtree push --prefix dist origin gh-pages
