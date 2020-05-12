@@ -56,32 +56,23 @@
             </v-row>
             <v-row justify="center" class="my-5">
                 <v-hover v-slot:default="{hover}">
-                    <v-btn 
-                        class="subtitle-1 font-weight-black btn" 
-                        tile large :elevation="hover ? 4:0"
-                        @click="download"
-                    >
-                        DOWNLOAD CV 
-                        <v-icon 
-                            :color="hover ? '#fff':'#ffbd69'" 
-                            class="mx-2"
-                        >mdi-cloud-download</v-icon>
-                    </v-btn>
+                    <a href="Irio Gomez CV.pdf" download class="text">
+                        <v-btn 
+                            class="subtitle-1 font-weight-black btn" 
+                            tile large :elevation="hover ? 4:0"
+                        >
+                            DOWNLOAD CV 
+                            <v-icon 
+                                :color="hover ? '#fff':'#ffbd69'" 
+                                class="mx-2"
+                            >mdi-cloud-download</v-icon>
+                        </v-btn>
+                    </a>
                 </v-hover>
             </v-row>
         </v-card-text>
     </v-card>
 </template>
-
-<script>
-    export default {
-        methods: {
-            download(){
-                
-            }
-        },
-    }
-</script>
 
 <style lang="scss" scoped>
     .transition{
@@ -112,5 +103,8 @@
     .btn{
         background: #fff !important;
         color: #ffbd69 !important;
+    }
+    .text{
+        text-decoration:none;
     }
 </style>
