@@ -7,7 +7,7 @@
                         <v-row justify="center" align="center" :class="$vuetify.breakpoint.smAndDown ? 'fill-height':'fill-height px-12'">
                             <div 
                                 :class="$vuetify.breakpoint.smAndDown ?  null:'pa-12'">
-                                <v-img contain :width="$vuetify.breakpoint.smAndDown ? 200:400" height="400" src="@/assets/iriop.png"></v-img>
+                                <v-img contain :width="$vuetify.breakpoint.smAndDown ? 200:400" height="400" src="@/assets/iriop.jpeg"></v-img>
                             </div>
                         </v-row>
                     </v-card>
@@ -22,27 +22,66 @@
                                 </div>
                                 <div 
                                     :class="$vuetify.breakpoint.smAndDown ? 'subtitle-1 white--text text-center my-5':'subtitle-1 white--text mr my-5'">
-                                    My name is Irio Gómez, I am a systems engineer, 
-                                    Lover of programming specialized 
-                                    in web development using front-end development environments 
-                                    such as vuejs, reactjs and laravel, Also I have experience in 
-                                    development on the back-end with nodejs.
+                                    I'm Irio Gomez, a software engineer based on Venezuela. 
+                                    Programming lover, specialized on web development using front-end 
+                                    enviroments such as VueJS, ReactJS and Laravel. Also i've experience 
+                                    working with backend enviroments such as NodeJS, ExpressJS.
                                 </div>
                                 <div :class="$vuetify.breakpoint.smAndDown ? 'subtitle-1 white--text my-5 text-center':'subtitle-1 white--text my-5'">
-                                    <div class="mb-5">Name:           <span >Irio Gómez</span></div>
-                                    <div class="mb-5">Age:            <span >22</span></div>
-                                    <div class="mb-5">Address:        <span >Nueva esparta, Venezuela</span></div>
-                                    <div class="mb-5">Phone number:   <span >+58 412-795-9576</span></div>
-                                    <div class="mb-5">Email:          <span >iriojgomezv@gmail.com</span></div>
+                                    <div class="mb-5 font-weight-black">
+                                        <v-icon color="#fff" class="mx-2">mdi-account-circle</v-icon> 
+                                        Name:<span > Irio Gómez</span>
+                                    </div>
+                                    <div class="mb-5 font-weight-black">
+                                        <v-icon color="#fff" class="mx-2">mdi-account-tie</v-icon>
+                                        Age: <span> 22</span>
+                                    </div>
+                                    <div class="mb-5 font-weight-black">
+                                        <v-icon color="#fff" class="mx-2">mdi-map-marker</v-icon>
+                                        Address:<span> Nueva esparta, Venezuela</span>
+                                    </div>
+                                    <div class="mb-5 font-weight-black">
+                                        <v-icon color="#fff" class="mx-2">mdi-phone</v-icon>
+                                        Phone number:<span> +58 412-795-9576</span>
+                                        </div>
+                                    <div class="mb-5 font-weight-black">
+                                        <v-icon color="#fff" class="mx-2">mdi-email</v-icon>
+                                        Email:<span> iriojgomezv@gmail.com</span>
+                                    </div>
                                 </div>
                             </div>
                         </v-row>
                     </v-card>
                 </v-col>
             </v-row>
+            <v-row justify="center" class="my-5">
+                <v-hover v-slot:default="{hover}">
+                    <v-btn 
+                        class="subtitle-1 font-weight-black btn" 
+                        tile large :elevation="hover ? 4:0"
+                        @click="download"
+                    >
+                        DOWNLOAD CV 
+                        <v-icon 
+                            :color="hover ? '#fff':'#ffbd69'" 
+                            class="mx-2"
+                        >mdi-cloud-download</v-icon>
+                    </v-btn>
+                </v-hover>
+            </v-row>
         </v-card-text>
     </v-card>
 </template>
+
+<script>
+    export default {
+        methods: {
+            download(){
+                
+            }
+        },
+    }
+</script>
 
 <style lang="scss" scoped>
     .transition{
@@ -60,6 +99,18 @@
         margin-left:50px;
     }
     .color{
+        color: #ffbd69 !important;
+    }
+    .btn:hover {
+        color: #fff !important;
+        background: #ffbd69 !important;
+        -moz-transition: all 400ms ease-in;
+        -webkit-transition: all 400ms ease-in;
+        -o-transition: all 400ms ease-in;
+        transition: all 400ms ease-in;
+    }
+    .btn{
+        background: #fff !important;
         color: #ffbd69 !important;
     }
 </style>

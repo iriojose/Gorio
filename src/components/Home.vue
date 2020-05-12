@@ -15,27 +15,26 @@
                     <v-card elevation="0" color="#202040" width="100%" :height="$vuetify.breakpoint.smAndDown ? null:700" class="px-10">
                         <v-row justify="center" align="center" class="fill-height">
                             <div>
-                                <div class="headline white--text font-weight-black my-5">WELCOME!</div>
+                                <div class="headline white--text font-weight-black my-5">HELLO!</div>
 
-                                <div :class="$vuetify.breakpoint.smAndDown ? 'my-5 altura':'my-5'">
+                                <div :class="$vuetify.breakpoint.smAndDown ? 'my-5 altura':'my-5 altura2'">
                                     <typewriter
                                         :speed="200"
                                         :full-erase="true"
                                         :interval="1000"
-                                        :words='["web developer","web designer","systems ingenieer"]'
-                                        class="display-2 white--text font-weight-black"
+                                        :words='["web developer","web designer","a systems ingenieer"]'
+                                        class="display-1 white--text font-weight-black"
                                     >
-                                        I Am
+                                        I Am Irio Gómez,
                                     </typewriter>
                                 </div>
 
                                 <div class="subtitle-1 white--text font-weight-black my-5">
-                                    I'm a Web Developer with extensive experience for over 2 years.
-                                    My expertise is to create and Websites design, graphic design 
-                                    and many more...
+                                    I've over 2 years of experience working with web architecture applications. 
+                                    I like to write readable code, design pretty and minimalist UI and much more...
                                 </div>
 
-                                <div class="my-5">
+                                <div class="my-5 text-center">
                                     <v-hover v-slot:default="{hover}">
                                         <a href="https://www.facebook.com/iriojose.gomezvillarroel">
                                             <v-btn small fab outlined class="btn mx-2">
@@ -121,5 +120,8 @@ import IconMessenger from '@/components/IconMessenger';
     }
     .altura{
         height:140px;
+    }
+    .altura2{
+        height:80px;
     }
 </style>

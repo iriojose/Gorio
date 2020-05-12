@@ -79,6 +79,9 @@ import IconDesign from '@/components/IconDesign';
                     {img:'node.svg'},
                     {img:'vue.svg'},
                     {img:'react.svg'},
+                    {img:'laravel.png'},
+                    {img:'vuetify.png'},
+                    {img:'expressjs.png'},
                 ]
             }
         },
