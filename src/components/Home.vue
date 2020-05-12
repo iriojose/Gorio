@@ -22,7 +22,7 @@
                                         :speed="200"
                                         :full-erase="true"
                                         :interval="1000"
-                                        :words='["web developer","web designer","a systems ingenieer"]'
+                                        :words='["web developer","web designer","a systems ingineer"]'
                                         class="display-1 white--text font-weight-black"
                                     >
                                         I Am Irio Gómez,
