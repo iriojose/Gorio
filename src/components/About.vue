@@ -7,7 +7,9 @@
                         <v-row justify="center" align="center" :class="$vuetify.breakpoint.smAndDown ? 'fill-height':'fill-height px-12'">
                             <div 
                                 :class="$vuetify.breakpoint.smAndDown ?  null:'pa-12'">
-                                <v-img contain :width="$vuetify.breakpoint.smAndDown ? 200:400" height="400" src="@/assets/iriop.jpeg"></v-img>
+                                <v-avatar :size="$vuetify.breakpoint.smAndDown ? 300:400" class="elevation-10">
+                                    <v-img src="@/assets/iriop.jpeg"></v-img>
+                                </v-avatar>
                             </div>
                         </v-row>
                     </v-card>

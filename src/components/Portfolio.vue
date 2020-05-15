@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="0" color="#202040" width="100%" height="800">
+    <v-card elevation="0" color="#202040" width="100%">
         <v-card-text>
             <v-row justify="center">
                 <v-col cols="12" md="12" sm="12">
@@ -8,7 +8,7 @@
                     </div>
                 </v-col>
                 <v-col cols="12" md="5" sm="12" v-for="(img,i) in images" :key="i">
-                    <v-card elevation="0" width="100%" height="300" color="transparent">
+                    <v-card elevation="0" width="100%" :height="$vuetify.breakpoint.smAndDown ? 350:300" color="transparent">
                         <div class="div-img hidden" >
                             <img class="img" :src="require('@/assets/'+img.img)">
                             <div class="overlay"></div>
@@ -19,7 +19,7 @@
                             <v-hover v-slot:default="{hover}">
                                 <div class="link subtitle-2 font-weight-black">
                                     <a :href="img.path">
-                                        See On GitHud 
+                                        See On GitHub 
                                         <v-btn small fab :class="hover ? 'background mx-2':'btn mx-2'">
                                             <IconGit :color="hover ? '#ffbd69':'#fff'" />
                                         </v-btn>
@@ -123,10 +123,10 @@ import IconGit from '@/components/IconGit';
         -moz-transform: translate(0px);
         -webkit-transform: translate(0px);
         -o-transform: translate(0px);
-        -webkit-transition: all 500ms ease-in-out;
-        -moz-transition: all 500ms ease-in-out;
-        -ms-transition: all 500ms ease-in-out;
-        -o-transition: all 500ms ease-in-out;
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        -ms-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
     }
     .titulo{
         font-family: 'Open Sans';
@@ -138,11 +138,11 @@ import IconGit from '@/components/IconGit';
         padding-left: 40px;
         padding-right:20px;
         opacity: 0;
-        transition: all 1.5s;
-        -webkit-transition: all 1.5s ease-in;
-        -moz-transition: all 1.5s ease-in;
-        -ms-transition: all 1.5s ease-in;
-        -o-transition: all 1.5s ease-in;
+        transition: all 1s;
+        -webkit-transition: all 1s ease-in;
+        -moz-transition: all 1s ease-in;
+        -ms-transition: all 1s ease-in;
+        -o-transition: all 1s ease-in;
     }
 
     .descripcion{
@@ -153,13 +153,13 @@ import IconGit from '@/components/IconGit';
         display: block;
         top: 25%;
         padding-left: 40px;
-        padding-right:60%;
+        padding-right:40%;
         opacity: 0;
-        transition: all 1.5s;
-        -webkit-transition: all 1.5s ease-in;
-        -moz-transition: all 1.5s ease-in;
-        -ms-transition: all 1.5s ease-in;
-        -o-transition: all 1.5s ease-in;
+        transition: all 1s;
+        -webkit-transition: all 1s ease-in;
+        -moz-transition: all 1s ease-in;
+        -ms-transition: all 1s ease-in;
+        -o-transition: all 1s ease-in;
     }
     .link{
         font-family: 'Open Sans';
@@ -171,11 +171,11 @@ import IconGit from '@/components/IconGit';
         padding-left: 40px;
         padding-right:20px;
         opacity: 0;
-        transition: all 1.5s;
-        -webkit-transition: all 1.5s ease-in;
-        -moz-transition: all 1.5s ease-in;
-        -ms-transition: all 1.5s ease-in;
-        -o-transition: all 1.5s ease-in;
+        transition: all 1s;
+        -webkit-transition: all 1s ease-in;
+        -moz-transition: all 1s ease-in;
+        -ms-transition: all 1s ease-in;
+        -o-transition: all 1s ease-in;
     }
     .div-img .overlay {
         position: absolute;
@@ -194,11 +194,11 @@ import IconGit from '@/components/IconGit';
         -o-transition: opacity 1s ease-in-out;
     }
     .div-img:hover .img {
-        transform: translate(200px, 0px);
-        -ms-transform: translate(200px, 0px);
-        -moz-transform: translate(200px, 0px);
-        -webkit-transform: translate(200px, 0px);
-        -o-transform: translate(200px, 0px);
+        transform: translate(300px, 0px);
+        -ms-transform: translate(300px, 0px);
+        -moz-transform: translate(300px, 0px);
+        -webkit-transform: translate(300px, 0px);
+        -o-transform: translate(300px, 0px);
     }
     .div-img:hover .overlay {
         opacity: 1;

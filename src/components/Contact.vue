@@ -17,7 +17,7 @@
                                         solo
                                         color="#ffbd69"
                                         label="Name"
-                                        v-model="nombre"
+                                        v-model="template_params.name"
                                     >
                                     </v-text-field>
                                 </v-col>
@@ -27,7 +27,7 @@
                                         :rules="[required('Email'),emailFormat()]"
                                         color="#ffbd69"
                                         label="Email"
-                                        v-model="email"
+                                        v-model="template_params.email"
                                     >
                                     </v-text-field>
                                 </v-col>
@@ -37,7 +37,7 @@
                                         :rules="[required('Sucject')]"
                                         color="#ffbd69"
                                         label="Subject"
-                                        v-model="asunto"
+                                        v-model="template_params.subject"
                                     >
                                     </v-text-field>
                                 </v-col>
@@ -46,6 +46,7 @@
                                         label="Message"
                                         :rules="[required('Message')]"
                                         solo
+                                        v-model="template_params.message"
                                         color="#ffbd69"
                                     >
                                     </v-textarea>
@@ -54,7 +55,8 @@
                                     <v-btn 
                                         :disabled="!valid" 
                                         block class="btn" 
-                                        height="45" @click="enviando" 
+                                        height="45" 
+                                        @click="sendEmail" 
                                         :loading="loading"
                                     >
                                         SEND Message
@@ -67,10 +69,10 @@
             </v-row>
         </v-card-text>
 
-        <v-snackbar v-model="send" :timeout="2000" color="#388E3C" right>
+        <v-snackbar v-model="snackbar" :timeout="2000" :color="color" right>
             <div>
-                <v-icon class="mx-2" color="#fff">mdi-check</v-icon>
-                Enviado exitosamente.
+                <v-icon class="mx-2" color="#fff">{{icon}}</v-icon>
+                {{mensaje}}
             </div>
         </v-snackbar>
     </v-card>
@@ -78,29 +80,48 @@
 
 <script>
 import validations from '@/validations/validations';
+import emailjs from 'emailjs-com';
 
     export default {
         data() {
             return {
                 ...validations,
                 valid:false,
-                nombre:'',
-                email:'',
-                asunto:'',
-                mensaje:'',
+                snackbar:false,
                 loading:false,
-                send:false,
+                icon:'',
+                color:'',
+                mensaje:'',
+
+                service_id:"default_service",
+                template_id:"iriotemplate",
+                user_id:"user_Lj58mznGqiGjPCnDe3f0K",
+                template_params:{
+                    "subject": "",
+                    "name": "",
+                    "email": "",
+                    "message": ""
+                },
             }
         },
         methods: {
-            enviando(){
+            sendEmail(){
                 this.loading = true;
-                setTimeout(() => {
-                    this.send = true;
+                emailjs.send(this.service_id, this.template_id, this.template_params,this.user_id).then((result) => {
+                    this.icon = "mdi-check-outline";
+                    this.color = "#388E3C"
+                    this.mensaje = "email sent correctly."
+                    this.snackbar = true;
                     this.loading = false;
-                },2000);
-            }
-        },
+                }).catch(e => {
+                    this.icon = "mdi-alert";
+                    this.color = "#D32F2F"
+                    this.mensaje = "error sending mail."
+                    this.snackbar = true;
+                    this.loading = false;
+                });
+            },
+        }
     }
 </script>
 
