@@ -30,29 +30,19 @@
             {{$t('lang.navbar.contacto')}}<span :class="contact ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.contacto-after')}}</span>
         </a>
         
-        <v-menu transition="slide-y-transition" bottom offset-y>
-            <template v-slot:activator="{ on }">
-                <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="caption font-weight-black" color="#fff" v-on="on" text elevation="0">
-                    <v-icon class="mx-2">
-                        mdi-ideogram-cjk-variant
-                    </v-icon>
-                    {{select.text}}
-                </v-btn>
-            </template>
-            <v-list>
-                <v-list-item v-for="(item, i) in langs" :key="i" @click="changeLang(item)">
-                    <v-list-item-title>{{ item.text }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </v-menu>
+        <ChangeLang v-if="!$vuetify.breakpoint.smAndDown" />
     </v-app-bar>
 </template>
 
 <script>
+import ChangeLang from '@/components/ChangeLang';
 import * as easings from 'vuetify/es5/services/goto/easing-patterns'
 import {mapActions} from 'vuex';
 
     export default {
+        components:{
+            ChangeLang
+        },
         props:{
             home:{
                 type:Boolean,
@@ -80,11 +70,6 @@ import {mapActions} from 'vuex';
                 duration: 500,
                 offset: 0,
                 easing: 'easeInOutCubic',
-                langs:[
-                    {lang:"en",text:"English",icon:""},
-                    {lang:"es",text:"Español",icon:""}
-                ],
-                select:{lang:"en",text:"English",icon:""}
             }
         },
         methods:{
@@ -92,10 +77,6 @@ import {mapActions} from 'vuex';
 
             change(){
                 this.setDrawer(true);
-            },
-            changeLang(evt){
-                this.$i18n.locale = evt.lang;
-                this.select = evt;
             }
         }
     }

@@ -5,8 +5,14 @@ import es from './locals/es'
 
 Vue.use(VueI18n)
 
+let lang = window.localStorage.getItem("lang");
+
+if(!lang){
+    lang = "en";
+}
+
 export default new VueI18n({
-    locale: 'en',
+    locale: lang,
     messages: {
         en: {
             lang: en
