@@ -1,0 +1,55 @@
+{
+    "navbar":{
+        "inicio":"I",
+        "inicio-after":"NICIO",
+        "about":"S",
+        "about-after":"OBRE MI",
+        "services":"S",
+        "services-after":"ERVICIOS",
+        "portfolio":"P",
+        "portfolio-after":"ORTAFOLIO",
+        "contacto":"C",
+        "contacto-after":"ONTÁCTAME"
+    },
+    "inicio": {
+        "saludo": "HOLA!",
+        "mensaje":"Tengo más de 2 años de experiencia trabajando con aplicaciones de arquitectura web. Me gusta escribir código legible, diseñar una interfaz de usuario bonita y minimalista y mucho más ...",
+        "soy":"Soy Irio Gómez,",
+        "opcion1":"Desarrollador web",
+        "opcion2":"Diseñador web",
+        "opcion3":"Ingeniero de sistemas"
+    },
+    "about":{
+        "titulo":"SOBRE",
+        "titulo-after":"MÍ",
+        "bio":"Soy Irio Gómez, un ingeniero de software con sede en Venezuela. Amante de la programación, especializado en desarrollo web utilizando entornos Front-end como VueJS, ReactJS y Laravel. También he experimentado trabajando con entornos de Backend como NodeJS, ExpressJS.",
+        "nombre":"Nombre",
+        "edad":"Edad",
+        "direccion":"Dirección",
+        "telefono":"Teléfono",
+        "correo":"Correo electrónico",
+        "descargar":"DESCARGAR"
+    },
+    "servicios":{
+        "titulo1":"MIS",
+        "titulo1-after":"SERVICIOS",
+        "titulo2":"HABILIDADES",
+        "card1":"DESARROLLO",
+        "card2":"DISEÑO",
+        "card3":"ANALISTA"
+    },
+    "portfolio":{
+        "titulo":"MI",
+        "titulo-after":"PORTAFOLIO"
+    },
+    "contacto":{
+        "titulo":"CONTÁCTAME",
+        "titulo-after":"",
+        "nombre":"Nombre",
+        "correo":"Correo electrónico",
+        "asunto":"Asunto",
+        "mensaje":"Mensaje",
+        "boton":"Enviar correo"
+    }
+    
+}

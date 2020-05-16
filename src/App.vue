@@ -8,6 +8,7 @@
             :portfolio="isPortfolio" 
             :contact="isContact"
         />
+
         <BarraLateral />
 
         <Home id="home" v-intersect="onIntersect" class="mb-12" />

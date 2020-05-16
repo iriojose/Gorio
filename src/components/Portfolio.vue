@@ -4,7 +4,7 @@
             <v-row justify="center">
                 <v-col cols="12" md="12" sm="12">
                     <div class="text-center display-1 white--text font-weight-black">
-                        MY <span class="color">PORTFOLIO</span>
+                        {{$t('lang.portfolio.titulo')}} <span class="color">{{$t('lang.portfolio.titulo-after')}}</span>
                     </div>
                 </v-col>
                 <v-col cols="12" md="5" sm="12" v-for="(img,i) in images" :key="i">

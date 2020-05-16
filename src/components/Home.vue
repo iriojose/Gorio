@@ -15,23 +15,22 @@
                     <v-card elevation="0" color="#202040" width="100%" :height="$vuetify.breakpoint.smAndDown ? null:700" class="px-10">
                         <v-row justify="center" align="center" class="fill-height">
                             <div>
-                                <div class="headline white--text font-weight-black my-5">HELLO!</div>
+                                <div class="headline white--text font-weight-black my-5">{{$t('lang.inicio.saludo')}}</div>
 
                                 <div :class="$vuetify.breakpoint.smAndDown ? 'my-5 altura':'my-5 altura2'">
                                     <typewriter
                                         :speed="200"
                                         :full-erase="true"
                                         :interval="1000"
-                                        :words='["web developer","web designer","a systems ingineer"]'
+                                        :words="[$t('lang.inicio.opcion1'),$t('lang.inicio.opcion2'),$t('lang.inicio.opcion3')]"
                                         class="display-1 white--text font-weight-black"
                                     >
-                                        I Am Irio Gómez,
+                                        {{$t('lang.inicio.soy')}}
                                     </typewriter>
                                 </div>
 
                                 <div class="subtitle-1 white--text font-weight-black my-5">
-                                    I've over 2 years of experience working with web architecture applications. 
-                                    I like to write readable code, design pretty and minimalist UI and much more...
+                                    {{$t('lang.inicio.mensaje')}}
                                 </div>
 
                                 <div class="my-5 text-center">

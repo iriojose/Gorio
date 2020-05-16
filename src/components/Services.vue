@@ -4,12 +4,12 @@
             <v-row justify="center">
                 <v-col cols="12" md="12" sm="12">
                     <div class="text-center display-1 white--text font-weight-black">
-                        MY <span class="color">SERVICES</span>
+                        {{$t('lang.servicios.titulo1')}} <span class="color">{{$t('lang.servicios.titulo1-after')}}</span>
                     </div>
                 </v-col>
                 <v-col cols="12" md="12" sm="12">
                     <v-row justify="center">
-                        <v-hover v-slot:default="{hover}" v-for="(service,i) in services" :key="i">
+                        <v-hover v-slot:default="{hover}" v-for="(service,i) in servis" :key="i">
                             <v-card 
                                 class="mx-5 mb-10 transition" 
                                 color="#1b1b37" elevation="0"
@@ -37,7 +37,7 @@
                     </v-row>
                 
                     <div class="text-center display-1 white--text font-weight-black my-5">
-                        <span class="color">SKILLS</span>
+                        <span class="color">{{$t('lang.servicios.titulo2')}}</span>
                     </div>
 
                     <v-row justify="center">
@@ -63,12 +63,22 @@ import IconDesign from '@/components/IconDesign';
             IconGit,
             IconDesign
         },
+        computed: {
+            servis(){
+                return this.services;
+            }
+        },
+        watch: {
+            '$i18n.locale'(){
+                this.services = this.services.filter((a,i) => a.title = this.$t('lang.servicios.card'+`${i+1}`));
+            }
+        },
         data() {
             return {
                 services:[
-                    {icon:'', title:'DEVELOPMENT',text:'Front-end, back-end development technologies.'},
-                    {icon:'', title:'DESIGN',text:'Responsive designs, web design, movile design.'},
-                    {icon:'', title:'ANALISTYC',text:'Systems analyst, software optimization, software auditor.'},
+                    {icon:'', title:this.$t('lang.servicios.card1'),text:'Front-end, back-end development technologies.'},
+                    {icon:'', title:this.$t('lang.servicios.card2'),text:'Responsive designs, web design, movile design.'},
+                    {icon:'', title:this.$t('lang.servicios.card3'),text:'Systems analyst, software optimization, software auditor.'},
                 ],
                 images:[
                     {img:'html.svg'},

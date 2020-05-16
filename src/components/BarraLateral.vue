@@ -16,6 +16,28 @@
                     {{opcion.text}}
                 </v-list-item-title>
             </v-list-item>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon>
+                        mdi-ideogram-cjk-variant
+                    </v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>
+                    <v-menu transition="slide-y-transition" bottom offset-y>
+                        <template v-slot:activator="{ on }">
+                            <v-btn class="subtitle-2 font-weight-black black--text" color="#fff" v-on="on" text elevation="0">
+                                {{select.text}}
+                            </v-btn>
+                        </template>
+                        <v-list>
+                            <v-list-item v-for="(item, i) in langs" :key="i" @click="changeLang(item)">
+                                <v-list-item-title>{{ item.text }}</v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
+                </v-list-item-title>
+            </v-list-item>
+            
         </v-list>
     </v-navigation-drawer>
 </template>
@@ -32,7 +54,12 @@ import {mapState,mapActions} from 'vuex';
                     {text:'SERVICES',icon:'mdi-briefcase',path:'#services'},
                     {text:'PORTFOLIO',icon:'mdi-clipboard-text-multiple',path:'#portfolio'},
                     {text:'CONTACT',icon:'mdi-card-account-phone',path:'#contact'},
-                ]
+                ],
+                langs:[
+                    {lang:"en",text:"English",icon:""},
+                    {lang:"es",text:"Español",icon:""}
+                ],
+                select:{lang:"en",text:"English",icon:""}
             }
         },
         computed:{
@@ -52,6 +79,10 @@ import {mapState,mapActions} from 'vuex';
 
             home(){
 
+            },
+            changeLang(evt){
+                this.$i18n.locale = evt.lang;
+                this.select = evt;
             }
         },     
     }

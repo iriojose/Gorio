@@ -4,7 +4,7 @@
             <v-row justify="center">
                 <v-col cols="12" md="12" sm="12">
                     <div class="text-center display-1 white--text font-weight-black">
-                        CONTACT <span class="color">US</span>
+                        {{$t('lang.contacto.titulo')}} <span class="color" v-if="$i18n.locale !== 'es'">{{$t('lang.contacto.titulo-after')}}</span>
                     </div>
                 </v-col>
                 <v-col cols="12" md="8" sm="12">
@@ -16,7 +16,7 @@
                                         :rules="[required('Name')]"
                                         solo
                                         color="#ffbd69"
-                                        label="Name"
+                                        :label="$t('lang.contacto.nombre')"
                                         v-model="template_params.name"
                                     >
                                     </v-text-field>
@@ -26,7 +26,7 @@
                                         solo
                                         :rules="[required('Email'),emailFormat()]"
                                         color="#ffbd69"
-                                        label="Email"
+                                        :label="$t('lang.contacto.correo')"
                                         v-model="template_params.email"
                                     >
                                     </v-text-field>
@@ -36,14 +36,14 @@
                                         solo
                                         :rules="[required('Sucject')]"
                                         color="#ffbd69"
-                                        label="Subject"
+                                        :label="$t('lang.contacto.asunto')"
                                         v-model="template_params.subject"
                                     >
                                     </v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="12" md="12">
                                     <v-textarea 
-                                        label="Message"
+                                        :label="$t('lang.contacto.mensaje')"
                                         :rules="[required('Message')]"
                                         solo
                                         v-model="template_params.message"
@@ -59,7 +59,7 @@
                                         @click="sendEmail" 
                                         :loading="loading"
                                     >
-                                        SEND Message
+                                        {{$t('lang.contacto.boton')}}
                                     </v-btn>
                                 </v-col>
                             </v-row>

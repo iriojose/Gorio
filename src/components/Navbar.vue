@@ -15,20 +15,36 @@
         <v-spacer></v-spacer>
 
         <a @click="$vuetify.goTo('#home')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
-            H<span :class="home ? 'font-weight-black hove':'white--text font-weight-black'">OME</span>
+            {{$t('lang.navbar.inicio')}}<span :class="home ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.inicio-after')}}</span>
         </a>
         <a @click="$vuetify.goTo('#about')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
-            A<span :class="about ? 'font-weight-black hove':'white--text font-weight-black'">BOUT</span>
+             {{$t('lang.navbar.about')}}<span :class="about ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.about-after')}}</span>
         </a>
         <a @click="$vuetify.goTo('#services')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
-            S<span :class="services ? 'font-weight-black hove':'white--text font-weight-black'">ERVICES</span>
+            {{$t('lang.navbar.services')}}<span :class="services ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.services-after')}}</span>
         </a>
         <a @click="$vuetify.goTo('#portfolio')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
-            P<span :class="portfolio ? 'font-weight-black hove':'white--text font-weight-black'">ORTFOLIO</span>
+            {{$t('lang.navbar.portfolio')}}<span :class="portfolio ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.portfolio-after')}}</span>
         </a>
         <a @click="$vuetify.goTo('#contact')" class="mx-4 font-weight-black white--text" v-if="!$vuetify.breakpoint.smAndDown">
-            C<span :class="contact ? 'font-weight-black hove':'white--text font-weight-black'">ONTACT</span>
+            {{$t('lang.navbar.contacto')}}<span :class="contact ? 'font-weight-black hove':'white--text font-weight-black'">{{$t('lang.navbar.contacto-after')}}</span>
         </a>
+        
+        <v-menu transition="slide-y-transition" bottom offset-y>
+            <template v-slot:activator="{ on }">
+                <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="caption font-weight-black" color="#fff" v-on="on" text elevation="0">
+                    <v-icon class="mx-2">
+                        mdi-ideogram-cjk-variant
+                    </v-icon>
+                    {{select.text}}
+                </v-btn>
+            </template>
+            <v-list>
+                <v-list-item v-for="(item, i) in langs" :key="i" @click="changeLang(item)">
+                    <v-list-item-title>{{ item.text }}</v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
     </v-app-bar>
 </template>
 
@@ -64,6 +80,11 @@ import {mapActions} from 'vuex';
                 duration: 500,
                 offset: 0,
                 easing: 'easeInOutCubic',
+                langs:[
+                    {lang:"en",text:"English",icon:""},
+                    {lang:"es",text:"Español",icon:""}
+                ],
+                select:{lang:"en",text:"English",icon:""}
             }
         },
         methods:{
@@ -71,6 +92,10 @@ import {mapActions} from 'vuex';
 
             change(){
                 this.setDrawer(true);
+            },
+            changeLang(evt){
+                this.$i18n.locale = evt.lang;
+                this.select = evt;
             }
         }
     }

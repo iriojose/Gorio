@@ -20,35 +20,32 @@
                             <div>
                                 <div 
                                     :class="$vuetify.breakpoint.smAndDown ? 'title white--text font-weight-black my-5 text-center':'title white--text font-weight-black my-5'">
-                                    ABOUT <span class="color">ME</span>
+                                    {{$t('lang.about.titulo')}} <span class="color">{{$t('lang.about.titulo-after')}}</span>
                                 </div>
                                 <div 
                                     :class="$vuetify.breakpoint.smAndDown ? 'subtitle-1 white--text text-center my-5':'subtitle-1 white--text mr my-5'">
-                                    I'm Irio Gomez, a software engineer based on Venezuela. 
-                                    Programming lover, specialized on web development using front-end 
-                                    enviroments such as VueJS, ReactJS and Laravel. Also i've experience 
-                                    working with backend enviroments such as NodeJS, ExpressJS.
+                                    {{$t('lang.about.bio')}}
                                 </div>
                                 <div :class="$vuetify.breakpoint.smAndDown ? 'subtitle-1 white--text my-5 text-center':'subtitle-1 white--text my-5'">
                                     <div class="mb-5 font-weight-black">
                                         <v-icon color="#fff" class="mx-2">mdi-account-circle</v-icon> 
-                                        Name:<span > Irio Gómez</span>
+                                        {{$t('lang.about.nombre')}}: <span >Irio Gómez</span>
                                     </div>
                                     <div class="mb-5 font-weight-black">
                                         <v-icon color="#fff" class="mx-2">mdi-account-tie</v-icon>
-                                        Age: <span> 22</span>
+                                        {{$t('lang.about.edad')}}: <span> 22</span>
                                     </div>
                                     <div class="mb-5 font-weight-black">
                                         <v-icon color="#fff" class="mx-2">mdi-map-marker</v-icon>
-                                        Address:<span> Nueva esparta, Venezuela</span>
+                                        {{$t('lang.about.direccion')}}: <span> Nueva esparta, Venezuela</span>
                                     </div>
                                     <div class="mb-5 font-weight-black">
                                         <v-icon color="#fff" class="mx-2">mdi-phone</v-icon>
-                                        Phone number:<span> +58 412-795-9576</span>
+                                        {{$t('lang.about.telefono')}}: <span> +58 412-795-9576</span>
                                         </div>
                                     <div class="mb-5 font-weight-black">
                                         <v-icon color="#fff" class="mx-2">mdi-email</v-icon>
-                                        Email:<span> iriojgomezv@gmail.com</span>
+                                        {{$t('lang.about.correo')}}: <span>iriojgomezv@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +60,7 @@
                             class="subtitle-1 font-weight-black btn" 
                             tile large :elevation="hover ? 4:0"
                         >
-                            DOWNLOAD CV 
+                            {{$t('lang.about.descargar')}} CV 
                             <v-icon 
                                 :color="hover ? '#fff':'#ffbd69'" 
                                 class="mx-2"

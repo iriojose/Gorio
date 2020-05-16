@@ -1,0 +1,54 @@
+{
+    "navbar":{
+        "inicio":"H",
+        "inicio-after":"OME",
+        "about":"A",
+        "about-after":"BOUT",
+        "services":"S",
+        "services-after":"ERVICES",
+        "portfolio":"P",
+        "portfolio-after":"ORTFOLIO",
+        "contacto":"C",
+        "contacto-after":"ONTACT ME"
+    },
+    "inicio": {
+        "saludo": "HELLO!",
+        "mensaje":"I've over 2 years of experience working with web architecture applications. I like to write readable code, design pretty and minimalist UI and much more...",
+        "soy":"I Am Irio Gómez,",
+        "opcion1":"Web developer",
+        "opcion2":"Web designer",
+        "opcion3":"A system ingineer"
+    },
+    "about":{
+        "titulo":"ABOUT",
+        "titulo-after":"ME",
+        "bio":"I'm Irio Gomez, a software engineer based on Venezuela. Programming lover, specialized on web development using front-end enviroments such as VueJS, ReactJS and Laravel. Also i've experience working with backend enviroments such as NodeJS, ExpressJS.",
+        "nombre":"Name",
+        "edad":"Age",
+        "direccion":"Address",
+        "telefono":"Phone Number",
+        "correo":"Email",
+        "descargar":"DOWNLOAD"
+    },
+    "servicios":{
+        "titulo1":"MY",
+        "titulo1-after":"SERVICES",
+        "titulo2":"SKILLS",
+        "card1":"DEVELOPMENT",
+        "card2":"DESIGN",
+        "card3":"ANALISTYC"
+    },
+    "portfolio":{
+        "titulo":"MY",
+        "titulo-after":"PORTFOLIO"
+    },
+    "contacto":{
+        "titulo":"CONTACT",
+        "titulo-after":"ME",
+        "nombre":"Name",
+        "correo":"Email",
+        "asunto":"Subject",
+        "mensaje":"Message",
+        "boton":"SEND EMAIL"
+    }
+}
