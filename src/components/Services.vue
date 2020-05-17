@@ -84,14 +84,15 @@ import IconDesign from '@/components/IconDesign';
         watch: {
             '$i18n.locale'(){
                 this.services = this.services.filter((a,i) => a.title = this.$t('lang.servicios.card'+`${i+1}`));
+                this.services = this.services.filter((a,i) => a.title = this.$t('lang.servicios.card'+`${i+1}-content`));
             }
         },
         data() {
             return {
                 services:[
-                    {icon:'', title:this.$t('lang.servicios.card1'),text:'Front-end, back-end development technologies.'},
-                    {icon:'', title:this.$t('lang.servicios.card2'),text:'Responsive designs, web design, mobile design.'},
-                    {icon:'', title:this.$t('lang.servicios.card3'),text:'Systems analyst, software optimization, software auditor.'},
+                    {icon:'', title:this.$t('lang.servicios.card1'),text:this.$t('lang.servicios.card1-content')},
+                    {icon:'', title:this.$t('lang.servicios.card2'),text:this.$t('lang.servicios.card2-content')},
+                    {icon:'', title:this.$t('lang.servicios.card3'),text:this.$t('lang.servicios.card3-content')},
                 ],
                 images:[
                     {img:'html.svg',value:100,color:"#e65100"},

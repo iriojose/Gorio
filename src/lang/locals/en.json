@@ -36,7 +36,10 @@
         "titulo2":"SKILLS",
         "card1":"DEVELOPMENT",
         "card2":"DESIGN",
-        "card3":"ANALISTYC"
+        "card3":"ANALISTYC",
+        "card1-content":"Front-end, back-end development technologies.",
+        "card2-content":"Responsive designs, web design, mobile design.",
+        "card3-content":"Systems analyst, software optimization, software auditor."
     },
     "portfolio":{
         "titulo":"MY",

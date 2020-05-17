@@ -36,7 +36,10 @@
         "titulo2":"HABILIDADES",
         "card1":"DESARROLLO",
         "card2":"DISEÑO",
-        "card3":"ANALISTA"
+        "card3":"ANALISTA",
+        "card1-content":"Tecnologías de desarrollo Front-end y Back-end.",
+        "card2-content":"Diseños receptivos, diseño web, diseño móvil.",
+        "card3-content":"Analista de sistemas, optimización de software, auditor de software."
     },
     "portfolio":{
         "titulo":"MI",
