@@ -41,12 +41,25 @@
                     </div>
 
                     <v-row justify="center">
-                        <v-img 
-                            contain width="250" height="200" :src="require('@/assets/'+img.img)"
-                            v-for="(img,i) in images" :key="i"
-                            class="my-5 mx-4 scale"
-                        >
-                        </v-img>
+                        <div v-for="(img,i) in images" :key="i">
+                            <v-img 
+                                contain width="250" height="200" :src="require('@/assets/'+img.img)"
+                                class="my-5 mx-4 scale"
+                            >
+                            </v-img>
+                            <v-progress-linear
+                                v-model="img.value"
+                                height="25"
+                                class="px-1"
+                                :color="img.color"
+                                reactive
+                            >
+                                <strong :class="img.img == 'expressjs.png' || img.img == 'php.svg' ?'black--text':'white--text'"
+                                >
+                                    {{ Math.ceil(img.value) }}%
+                                </strong>
+                            </v-progress-linear>
+                        </div>
                     </v-row>
                 </v-col>
             </v-row>
@@ -77,21 +90,22 @@ import IconDesign from '@/components/IconDesign';
             return {
                 services:[
                     {icon:'', title:this.$t('lang.servicios.card1'),text:'Front-end, back-end development technologies.'},
-                    {icon:'', title:this.$t('lang.servicios.card2'),text:'Responsive designs, web design, movile design.'},
+                    {icon:'', title:this.$t('lang.servicios.card2'),text:'Responsive designs, web design, mobile design.'},
                     {icon:'', title:this.$t('lang.servicios.card3'),text:'Systems analyst, software optimization, software auditor.'},
                 ],
                 images:[
-                    {img:'html.svg'},
-                    {img:'css.svg'},
-                    {img:'php.svg'},
-                    {img:'mysql.svg'},
-                    {img:'js.svg'},
-                    {img:'node.svg'},
-                    {img:'vue.svg'},
-                    {img:'react.svg'},
-                    {img:'laravel.png'},
-                    {img:'vuetify.png'},
-                    {img:'expressjs.png'},
+                    {img:'html.svg',value:100,color:"#e65100"},
+                    {img:'css.svg',value:90,color:"#0277bd"},
+                    {img:'php.svg',value:90,color:"#dcd5f2"},
+                    {img:'mysql.svg',value:80,color:"#232323"},
+                    {img:'js.svg',value:100,color:"#0277bd"},
+                    {img:'node.svg',value:90,color:"#4caf50"},
+                    {img:'vue.svg',value:100,color:"#455a64"},
+                    {img:'react.svg',value:70,color:"#80dde9"},
+                    {img:'laravel.png',value:80,color:"#d4362e"},
+                    {img:'vuetify.png',value:100,color:"#166ac3"},
+                    {img:'expressjs.png',value:90,color:"#ffffff"},
+                    {img:'mongodb.png',value:90,color:"#4fb23f"},
                 ]
             }
         },
