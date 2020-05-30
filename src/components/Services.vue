@@ -47,18 +47,18 @@
                                 class="my-5 mx-4 scale"
                             >
                             </v-img>
-                            <v-progress-linear
-                                v-model="img.value"
-                                height="25"
-                                class="px-1"
-                                :color="img.color"
-                                reactive
-                            >
+                            <div class="px-2">
+                                <v-progress-linear
+                                    height="25"
+                                    :value="img.value"
+                                    :color="img.color"
+                                >
                                 <strong :class="img.img == 'expressjs.png' || img.img == 'php.svg' ?'black--text':'white--text'"
                                 >
                                     {{ Math.ceil(img.value) }}%
                                 </strong>
                             </v-progress-linear>
+                            </div>
                         </div>
                     </v-row>
                 </v-col>
@@ -84,7 +84,7 @@ import IconDesign from '@/components/IconDesign';
         watch: {
             '$i18n.locale'(){
                 this.services = this.services.filter((a,i) => a.title = this.$t('lang.servicios.card'+`${i+1}`));
-                this.services = this.services.filter((a,i) => a.title = this.$t('lang.servicios.card'+`${i+1}-content`));
+                this.services = this.services.filter((a,i) => a.text = this.$t('lang.servicios.card'+`${i+1}-content`));
             }
         },
         data() {
